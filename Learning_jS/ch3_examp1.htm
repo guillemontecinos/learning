@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+
+  //Eq is ºC = 5/9 (ºF - 32)
+  var degFar = Number(prompt("Enter the temperature in Fahrenheit degrees",32));
+  var degCel = 5/9*(degFar-32);
+
+  document.write(degFar + "\xB0 Fahrenheit is " + degCel + "\xB0 centigrade<br />");
+
+  if(degCel<0){
+    document.write("That's below the freezing point of water");
+  }
+
+</script>
+</body>
+</html>
