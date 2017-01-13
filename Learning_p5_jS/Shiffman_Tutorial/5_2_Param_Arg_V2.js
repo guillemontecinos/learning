@@ -1,30 +1,29 @@
 var triang;
-var click = false;
-var arribado = true;
+var arribado = false;
 
 function setup() {
   createCanvas(600,400);
   triang = new Triangulo();
-}
+  }
 
 function draw() {
-  //click = false;
   background(0);
   triang.enDestino();
   triang.mover();
   triang.render();
+  print(posGlobal);
   print(arribado);
   print(triang.posActual);
   print(triang.posDestino);
-  //print(click);
-
+  print(triang.vel);
 }
 
 function Triangulo(){
   this.pos1 = createVector(width/2,height/2);
   this.pos2 = createVector(width*.8,height/2);
-  this.posActual = this.pos1;
-  this.posDestino = this.pos2;
+  this.posActual = this.pos1.copy();
+  this.posDestino = this.pos2.copy();
+  this.vel = p5.Vector.mult(p5.Vector.sub(this.pos2,this.pos1),0.01);
   this.h = 50;
   this.ancho = 20;
 
@@ -39,9 +38,9 @@ function Triangulo(){
   }
 
   this.enDestino = function(){
-    if (abs(this.posDestino.x-this.posActual.x) <= 5 && abs(this.posDestino.y-this.posActual.y) <= 5) {
+    if (p5.Vector.dist(this.posDestino, this.posActual) <= 5 ) {
       arribado = true;
-      this.posActual = this.posDestino;
+      this.posActual = this.posDestino.copy();
     } else {
       arribado = false;
     }
@@ -49,18 +48,20 @@ function Triangulo(){
 
   this.mover = function(){
     if(arribado == false){
-      this.posActual.x += (this.posDestino.x-this.posActual.x)/100;
-      this.posActual.y += (this.posDestino.y-this.posActual.y)/100;
+      this.posActual.add(this.vel);
+    }
+  }
+
+  this.cambioDireccion = function(){
+    if (triang.posDestino.x == triang.pos1.x) {
+        triang.posDestino = triang.pos2.copy();
+    }else if (triang.posDestino.x == triang.pos2.x) {
+      triang.posDestino = triang.pos1.copy();
     }
   }
 }
 
 function mousePressed(){
-  //click = true;
-  if (triang.posDestino == triang.pos2) {
-    triang.posDestino = triang.pos1;
-  }
-  else if (triang.posDestino == triang.pos1) {
-    triang.posDestino = triang.pos2;
-  }
+  triang.vel.mult(-1);
+  triang.cambioDireccion();
 }
