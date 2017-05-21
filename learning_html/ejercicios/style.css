@@ -1,0 +1,103 @@
+
+@font-face {
+    font-family: 'myriadpro';
+    src: url('myriadpro.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+  background-color: rgb(193,193,193)
+}
+
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: black;
+    /*set font to the font wanted*/
+    font-family: 'myriadpro';
+    /*normal text, no italics, no bold*/
+    font-weight: normal;
+    /*centered text*/
+    text-align: left;
+    /*display in block*/
+    display: inline-block;
+    /*reset margin and padding for google chrome */
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+    /*no padding (inner space of element)*/
+    padding: 1.5%;
+    /*margin (outter space of element)*/
+    /*first reset, then set actual value wanted*/
+    margin: 0.3em;
+}
+
+/*css for font sizes of header elements*/
+h1{
+  font-size: 3em;
+}
+
+/*css for links ("a" elements), when hovering over them*/
+
+a:hover {
+    /*change opacity of link*/
+    color: black;
+    background-color: rgb(240,240,240);
+}
+
+/*css for links ("a" elements)*/
+a {
+    font-size: 1.5em;
+    /*reset of format*/
+    text-decoration: none;
+    /*set font to avantgarde*/
+    font-family: 'myriadpro';
+    /*set color to black*/
+    color: white;
+}
+
+/*css for html element with id*/
+#myHeader h1{
+  text-align: center;
+  display: block;
+  padding-top: 10%;
+}
+
+#subHeader h2{
+  color: rgb(86,86,86);
+  padding-bottom: 10%;
+  text-align: center;
+  display: block;
+  font-size: 200%
+}
+
+/*css for element with id myNavMenu*/
+#myNavMenu {
+    position:relative;
+    padding: 0;
+    width: 100%;
+    overflow: auto;
+    background: rgb(20,20,20)
+}
+
+#myContent p {
+    width: 300;
+    padding: 3%;
+    color: rgb(40,40,40);
+    background-color: rgb(230,230,230);
+    font-size: 130%;
+    text-align:justify;
+}
+
+/*css for a elements under element with id myNavMenu*/
+#myNavMenu a {
+    float: left;
+    width: 33%;
+    text-align: center;
+    padding-top: 1.5%;
+    padding-bottom: 1%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 1, 1);
+}
