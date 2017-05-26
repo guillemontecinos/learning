@@ -1,14 +1,14 @@
 var particula;
 
 function setup(){
-  particula = new Particula(100,200,30);
-  createCanvas(1000,500);
-  background(200);
+  particula = new Particula(100,200,20);
+  createCanvas(1200,800);
 }
 
 function draw(){
+background(200);
 particula.update();
-print(particula.direccion);
+print(particula.ac);
 }
 
 function Particula(x,y,radio){
@@ -37,17 +37,23 @@ function Particula(x,y,radio){
 
   this.setAcc = function(){
     var distancia = dist(this.x,this.y,width/2,height/2);
-    if(distancia<10){
-      this.ac=this.dirNorm;
+    if(distancia<1){
+      this.ac=this.dirNorm.mult(0);
     }
     else {
       this.ac=this.dirNorm.mult(1/distancia);
     }
   }
 
-  this.setVel = function(){}
+  this.setVel = function(){
+    this.v.x = this.v.x + this.ac.x;
+    this.v.y = this.v.y + this.ac.y;
+  }
 
-  this.setPos = function(){}
+  this.setPos = function(){
+    this.x = this.x + this.v.x;
+    this.y = this.y + this.v.y;
+  }
 
   /*
   this.fuerza = function(){

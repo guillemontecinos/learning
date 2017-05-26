@@ -16,9 +16,10 @@ var capture;
 function setup() {
   createCanvas(480, 120);
   capture = createCapture(VIDEO);
+  capture.hide();
 }
 
 function draw() {
-  image(capture, 0, 0, width, width*capture.height/capture.width);
-  filter(INVERT);
+  image(capture, 0, 0,width,height);
+  //filter(INVERT);
 }
