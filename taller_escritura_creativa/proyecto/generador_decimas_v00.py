@@ -17,12 +17,6 @@ definir reglas de verso en decima
 estas reglas deben ser definidas de alguna manera para py
 '''
 
-#definir tema de la decima
-temaDecima = ""
-
-#ejecucion de main
-generarDecima(temaDecima)
-
 #====================
 #biblioteca principal
 #====================
@@ -30,3 +24,21 @@ generarDecima(temaDecima)
 #solicita un tema
 def generarDecima(tema):
     #TODO
+
+#====================
+#fin biblioteca
+#====================
+
+#====================
+#comienzo programa
+#====================
+
+#definir tema de la decima
+temaDecima = ""
+
+#ejecucion de main
+generarDecima(temaDecima)
+
+#====================
+#fin programa
+#====================
