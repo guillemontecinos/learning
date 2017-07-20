@@ -14,4 +14,10 @@ genere versos en decima
 metodo:
 definir estructura gramatical sobre  la que se escriben decimas
 definir reglas de verso en decima
+estas reglas deben ser definidas de alguna manera para py
 '''
+
+#main: funcion que genera la decima.
+#solicita un tema
+def generarDecima(tema):
+    #TODO
