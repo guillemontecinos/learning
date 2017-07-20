@@ -20,6 +20,13 @@ estas reglas deben ser definidas de alguna manera para py
 #definir tema de la decima
 temaDecima = ""
 
-#cuerpo del codigo que genera la decima.
-#utiliza el temaDecima definido anteriormente
-#TODO
+#ejecucion de main
+generarDecima(temaDecima)
+
+#====================
+#biblioteca principal
+#====================
+#main: funcion que genera la decima.
+#solicita un tema
+def generarDecima(tema):
+    #TODO
