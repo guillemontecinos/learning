@@ -17,7 +17,9 @@ definir reglas de verso en decima
 estas reglas deben ser definidas de alguna manera para py
 '''
 
-#main: funcion que genera la decima.
-#solicita un tema
-def generarDecima(tema):
-    #TODO
+#definir tema de la decima
+temaDecima = ""
+
+#cuerpo del codigo que genera la decima.
+#utiliza el temaDecima definido anteriormente
+#TODO
